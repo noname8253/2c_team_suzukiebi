@@ -14,6 +14,7 @@ public class LoginController {
 		return "login";
 	}
 
+	//ログイン検証用
 	@RequestMapping(path = "/login", method = RequestMethod.POST)
 	public String login(String yuza,int NUMBER, int PASS,RedirectAttributes redirectAttributes) throws IOException {
 		if ((NUMBER==2201085)&&(PASS==1920)) {
