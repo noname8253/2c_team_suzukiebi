@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 @Controller
 public class LoginController {
+	//画面表示用
 	@RequestMapping(path = "/login", method = RequestMethod.GET)
 	public String login() {
 		return "login";
