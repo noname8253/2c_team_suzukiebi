@@ -4,16 +4,22 @@
 <head>
 	<meta charset="UTF-8">
 	<link rel="stylesheet" type="text/css" href="/css/mylogin.css">
-
-	<title>○○SNS_login</title>
+<style>
+	body {
+		text-align: center;
+		background-color: #e0ffff;
+	
+	}
+</style>
+	<title>KRCナッくんSP_login</title>
 </head>
 
 <body>
-	<h3>KRC学習サイトへようこそ</h3>
+	<h1>KRC学習サイトへようこそ</h1>
 	<form th:action="@{/mylogin}" method="POST" enctype="multipart/form-data">
-		<p>ID</p><input type="int" name="NUMBER"><br>
-		<p>PASS</p><input type="int" name="PASS"><br>
-		<input type="submit">
+		<p>学籍番号</p><input type="int" name="NUMBER"><br>
+		<p>パスワード</p><input type="int" name="PASS"><br>
+		<p><input type="submit"></p>
 		<p th:text="${sample}"></p>
 	</form>
 
