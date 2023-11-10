@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>本当にログアウトしますか?</h1>
+	<input type="button" value="ログアウトする" onclick="MoveCheck();">
+
+<script>
+	function MoveCheck() {
+    if( confirm("本当にログアウトしますか？") ) {
+        window.location.href = "login";
+    }
+    else {
+         window.history.back();
+    }
+}</script>
+</body>
+</html>

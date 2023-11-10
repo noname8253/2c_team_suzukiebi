@@ -2,66 +2,26 @@
 <html>
 <head>
 <meta charset="UTF-8">
-
 <link rel="stylesheet"type="text/css" href="css/header.css">
 <title>Insert title here</title>
+<div id="header"></div>
 </head>
 <body>
-<header>
-  <div class="inner">
-    <p class="logo"><a class="over" href="#">COMPANY</a></p>
-    <ul class="navi">
-      <li><a href="/feature/">選ばれる理由</a></li>
-      <li><a href="/service/">サービス</a></li>
-      <li><a href="/case/">制作事例</a></li>
-      <li><a href="/company/">会社案内</a></li>
-      <li><a href="/recruit/">採用情報</a></li>
-    </ul>
-  </div>
-  <button class="sp-navi-toggle"><span class="bar"></span><span class="bar"></span><span class="bar"></span><span class="menu">MENU</span><span class="close">CLOSE</span></button>
-</header>
 	<script>
+      fetch("header")
+        .then((response) => response.text())
+        .then((data) => document.querySelector("#header").innerHTML = data);
 		//sp menu
-
-(function () {
-  document
-    .querySelector("body")
-    .insertAdjacentHTML("afterbegin", '<div class="sp-navi-box"><div class="sp-navi"></div></div>');
-  document.querySelector(".sp-navi").innerHTML = document.querySelector(
-    ".navi"
-  ).innerHTML;
-
-  const documentElement = document.querySelector("html");
-  const contentElement = document.querySelector("#main");
-  const sidebarElement = document.querySelector(".sp-navi-box");
-  const openSidebar = function () {
-    scl_point = window.pageYOffset;
-    documentElement.classList.add("sidebar-is-open");
-    $("body").css("top", "-" + scl_point + "px");
-  };
-  const closeSidebar = function () {
-    documentElement.classList.remove("sidebar-is-open");
-    $(window).scrollTop(
-      $("body").css("top").replace(/-/g, "").replace(/px/g, "")
-    );
-    $("body").css("top", 0);
-  };
-  $(".sp-navi-toggle").click(function () {
-    //, .sp-navi-box a[href^=#]
-    if ($(".sidebar-is-open").length) {
-      closeSidebar();
-    } else {
-      openSidebar();
-    }
-  });
-})();
-		
-	</script>
+</script>	
+    <br>
+    <br>
+    <br>  
 	<h1><a href="subject">授業一覧</a></h1>
 	<h2>各授業の復習ができます</h2>
 	<h1><a href="question">問題一覧</a></h1>
 	<h2>練習問題に挑戦できます</h2>
 	<h1><a href="teacher">教師状況</a></h1>
 	<h2>各教師の居場所や都合が載ってます</h2>
+	
 </body>
 </html>
