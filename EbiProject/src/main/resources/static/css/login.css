@@ -8,15 +8,15 @@ box-sizing: border-box;
 }
 body {
 font-family: Arial;
-background-color: #3498DB;
-padding: 50px;
+background-color: #ffffe0;
+padding: 70px;
 }
 .login {
-margin: 20px auto;
-width: 300px;
+margin: 60px auto;
+width: 500px;
 }
 .login-screen {
-background-color: #FFF;
+background-color: #f0f8ff;
 padding: 20px;
 border-radius: 5px
 }
@@ -35,7 +35,7 @@ margin-bottom: 10px;
 
 input {
 text-align: center;
-background-color: #ECF0F1;
+background-color: #ffffff;
 border: 2px solid transparent;
 border-radius: 3px;
 font-size: 16px;
@@ -68,7 +68,7 @@ box-shadow: none;
 }
 
 .btn:hover {
-  background-color: #2980B9;
+  background-color: #fffaf0;
 }
 
 .login-link {
