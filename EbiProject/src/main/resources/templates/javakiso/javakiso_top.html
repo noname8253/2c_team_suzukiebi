@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Java基礎_トップ
+</title>
+</head>
+<body>
+<h1>Java基礎トップ画面</h1>
+<table>
+		<tr th:each="subject : ${resultlist}">
+			<td>
+				 <span th:="${subject.科目_科目名}">
+		    </td>
+		</tr>
+</table>
+ <script>
+        function redirectToSpecificURL(url) {
+            // 特定のURLにリダイレクト
+            window.location.href = url;
+        }
+    </script>
+</body>
+</html>
