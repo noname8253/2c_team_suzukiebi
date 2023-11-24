@@ -16,7 +16,7 @@ public class LoginController {
 
     //ログイン成功時のメニュー画面への遷移
     @PostMapping
-    String postLogin() {
+    String top() {
         return "top";
     }
 }
