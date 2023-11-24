@@ -2,14 +2,15 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>問題一覧</title>
+<link rel="stylesheet"type="text/css" href="../css/header.css">
+<title>Java基礎_トップ</title>
 <div id="header"></div>
 </head>
 <body>
 	
 	
 		<script>
-      fetch("header")
+      fetch("../header")
         .then((response) => response.text())
         .then((data) => document.querySelector("#header").innerHTML = data);
 		//sp menu
@@ -19,9 +20,6 @@
     <br>
     <br>
     <br>
-    <h1>授業一覧</h1>
-    <h2><a href="./javakiso/javakiso_top">Java基礎</h2>
-    <h2>Javaフレームワーク</h2>
-    <h2>Javascript</h2>
+    <h1>Java基礎トップ</h1>
 </body>
 </html>

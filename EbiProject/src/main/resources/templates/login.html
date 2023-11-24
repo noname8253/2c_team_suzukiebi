@@ -16,7 +16,7 @@
       <div class="app-title">
         <h1>ログイン</h1>
       </div>
-
+<form th:action="@{/login}" method="POST" enctype="multipart/form-data">
       <div class="login-form">
 		  <form action="@{/login}" method="post">
         <div class="control-group">
@@ -28,8 +28,14 @@
         <input type="text" class="login-field" value="パスワード" name="パスワード">
         <label class="login-field-icon fui-lock" for="login-pass"></label>
         </div>
+<<<<<<< HEAD
 </form>
         <a class="btn btn-primary btn-large btn-block" href="top">ログイン</a>
+=======
+        <a class="btn btn-primary btn-large btn-block">ログイン</a>
+        </form>
+        
+>>>>>>> branch 'master' of https://github.com/noname8253/2c_team_suzukiebi.git
         <a class="login-link" href="#">Lost your password?</a>
       </div>
     </div>
