@@ -6,26 +6,21 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-
 @Controller
 public class LoginController {
-    //ログイン画面への遷移
 	@RequestMapping(path = "/login", method = RequestMethod.GET)
-    public String getLogin() {
-        return "login";
-        }
-    
+	public String login() {
+		return "login";
+	}
 
-    //ログイン成功時のメニュー画面への遷移
 	@RequestMapping(path = "/login", method = RequestMethod.POST)
-	public String login(String login-name ,String login-pass,RedirectAttributes redirectAttributes) throws IOException {
-		if (login-name.equals("2201085") && login-pass.equals("1920")) {
-			return "/top";
+	public String login(String NUMBER, String PASS,RedirectAttributes redirectAttributes) throws IOException {
+		if (NUMBER.equals("2201085") && PASS.equals("1920")) {
+			return "redirect:/top";
 		} else {
-			redirectAttributes.addFlashAttribute("yuza", yuza);
-			redirectAttributes.addFlashAttribute("ID", ID);
-			redirectAttributes.addFlashAttribute("PASS", PASS);
-			return "redirect:/ng";
+			return "redirect:/login";
 
 		}
+	}
+	
 	}
