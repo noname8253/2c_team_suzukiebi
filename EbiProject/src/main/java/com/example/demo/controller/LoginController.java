@@ -14,7 +14,13 @@ public class LoginController {
     }
     //ログイン成功時のメニュー画面への遷移
     @PostMapping
-    String top() {
-        return "top";
+    public static String top(String password,String number) {
+        if (number.equals("2201085") && password.equals("1920") ){
+            System.out.println("ログイン成功！");
+            return "redirect:/top";
+        } else {
+            System.out.println("ログイン失敗。");
+    		return "redirect:/login";
+    	}
     }
 }

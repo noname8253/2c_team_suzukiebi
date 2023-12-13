@@ -20,18 +20,18 @@
       <div class="login-form">
 		  <form action="@{/login}" method="post">
         <div class="control-group">
-        <input type="text" class="login-field" value="学籍番号" name="学籍番号">
+        <input type="text" class="login-field" value="学籍番号" name="number">
         <label class="login-field-icon fui-user" for="login-name"></label>
         </div>
 
         <div class="control-group">
-        <input type="text" class="login-field" value="パスワード" name="パスワード">
+        <input type="text" class="login-field" value="パスワード" name="password">
         <label class="login-field-icon fui-lock" for="login-pass"></label>
         </div>
 
-</form>
-        <a class="btn btn-primary btn-large btn-block" href="top">ログイン</a>
+        <input type="submit" name="login"class="login-botan">
         <a class="login-link" href="#">Lost your password?</a>
+</form>
       </div>
     </div>
   </div>

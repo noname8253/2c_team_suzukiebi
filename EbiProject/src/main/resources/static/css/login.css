@@ -18,7 +18,7 @@ width: 500px;
 .login-screen {
 background-color: #f0f8ff;
 padding: 20px;
-border-radius: 5px
+border-radius: 5px;
 }
 
 .app-title {
@@ -35,7 +35,7 @@ margin-bottom: 10px;
 
 input {
 text-align: center;
-background-color: #ffffff;
+background-color: floralwhite;
 border: 2px solid transparent;
 border-radius: 3px;
 font-size: 16px;
@@ -76,4 +76,9 @@ box-shadow: none;
   color: #444;
   display: block;
   margin-top: 12px;
+}
+
+.login-botan{
+    background-color: skyblue;
+    color: blue;
 }
