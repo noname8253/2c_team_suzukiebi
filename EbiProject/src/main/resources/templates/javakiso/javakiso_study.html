@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet"type="text/css" href="../css/header.css">
-<title>Java基礎_トップ</title>
+<title>Java基礎_授業</title>
 <div id="header"></div>
 </head>
 <body>
@@ -15,16 +15,20 @@
         .then((data) => document.querySelector("#header").innerHTML = data);
 		//sp menu
 </script>	
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <h1>Java基礎トップ</h1>
-    <tr th:each="CourceList:${CourceList}">
-			<a th:href="@{javakiso_study/${CourceList.art9icleID}}">第${CourceList.courceID}+'回目：'+ ${CourceList.title}")</a>
-					
-	<br>
-			</tr>
-    </body>
+   <br>
+<br>
+<br>
+<br>
+<br>
+<h2>本文</h2>
+<h2>-----------------------------</h2>
+<a th:text="${kizilist.article}"></a>
+<br>
+<br>
+<br>
+<h2>-----------------------------</h2>
+<input type="button" value="練習問題">
+<input type="button" value="次へ">
+</body>
 </html>
+

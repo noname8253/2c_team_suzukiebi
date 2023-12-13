@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet"type="text/css" href="../css/header.css">
+<title>Java基礎_問題トップ</title>
+<div id="header"></div>
+</head>
+<body>
+	
+	
+		<script>
+      fetch("../header")
+        .then((response) => response.text())
+        .then((data) => document.querySelector("#header").innerHTML = data);
+		//sp menu
+</script>	
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <h1>Java基礎問題集</h1>
+<h2><a href="./javakisoq_1st">クラスについてpart1</a></h2>
+<h2><a href="#">クラスについてpart2</a></h2>
+<h2>----------------------------------</h2>
+<h2>上記のような形式でDBからタイトルをSELECT文で取り出し画面に表示する</h2>
+<h2>タイトル部分にリンクを設定し、問題ページに飛べるようにする</h2>
+</body>
+</html>

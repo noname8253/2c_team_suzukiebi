@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>テスト</title>
+</head>
+<body>
+<form th:action="@{/test}" method="POST" enctype="multipart/form-data">
+<input type="text" name="code" value="記事のコードを入力してね">
+<input type="text" name="number" value="何回目か数字だけで入力してね">
+
+<input type="submit" name="send" value="記事登録">
+</form>
+</body>
+</html>
