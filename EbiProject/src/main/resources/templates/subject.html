@@ -20,8 +20,10 @@
     <br>
     <br>
     <h1>授業一覧</h1>
-    <h2><a href="./javakiso/javakiso_top">Java基礎</h2>
-    <h2>Javaフレームワーク</h2>
-    <h2>Javascript</h2>
+		    <tr th:each="SubjectList:${SubjectList}">
+			<a th:text="${SubjectList.subjectname}"></a>
+			<a th:href="@{'/javakiso/javakiso_top/' + ${SubjectList.subjectID}}"><button>授業</button></a>
+
+<br></tr>
 </body>
 </html>

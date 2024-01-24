@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>登録内容確認</title>
+</head>
+
+<body>
+    <form th:action="@{/register_check}" method="post" id="update">
+	<h1>以下の内容で登録してもよろしいでしょうか</h1>
+	<h2>授業ID</h2>
+	<div th:text="${relist[0].subjectID}" ></div>
+	<input type="hidden" th:value="${relist[0].subjectID}" name="subjectID">
+	<h2>回数</h2>
+	<div th:text="${relist[0].courceID}" name="courceID"></div>
+	<input type="hidden" th:value="${relist[0].courceID}" name="courceID">
+	<h2>タイトル</h2>
+	<div th:text="${relist[0].title}" name="title"></div>
+	<input type="hidden" th:value="${relist[0].title}" name="title"></div>
+	<h2>授業コード</h2>
+	<div th:utext="${relist[0].code}" name="code"></div>
+	<input type="hidden" th:value="${relist[0].code}" name="code"></div>
+
+	<input type="submit" value="登録">
+	</form>
+
+	<script>
+
+
+
+
+	</script>
+</body>
+
+</html>
