@@ -1,15 +1,16 @@
 package com.example.demo.controller;
 
+import java.nio.charset.StandardCharsets;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
@@ -46,24 +47,37 @@ public class RegisterController {
 
         // Retrieve processed codes from the database
         List<Map<String,Object>> processedCodes = jdbcTemplate.queryForList("SELECT code FROM codecreate WHERE testID=1");
-        String testcode = (String) processedCodes.get(0).get("code");
         model.addAttribute("processedCodes", processedCodes.get(0).get("code"));
 	    	//ここでgithubにデータを送り、レスポンスを受け取ってDBに格納したい
 	        // GitHub APIエンドポイント
 	        String githubApiUrl = "https://api.github.com/markdown/raw";
-	        String githubToken = "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";
+	        //String githubToken = "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";
 	        
 	        
 	        // GitHub APIへのリクエストヘッダー設定
 	        HttpHeaders headers = new HttpHeaders();
+	        headers.set("Content-Type", "text/plain; charset=UTF-8"); // UTF-8を指定
+
+	        /**HttpHeaders headers = new HttpHeaders();
 	        headers.set("Authorization", "token " + githubToken);
 	        headers.set("X-GitHub-Api-Version", "2022-11-28");
 	        headers.setContentType(MediaType.TEXT_PLAIN);
-
+**/
 	        // GitHub APIへのリクエストボディ設定
-//			List<Map<String, Object>> testcode = jdbcTemplate.queryForList("SELECT code FROM codecreate where testID = 1");		
-	        String markdownText = testcode.toString();//変数名にして右側に表示する
-	        HttpEntity<String> requestEntity = new HttpEntity<>(markdownText, headers);
+//			// testcodeから文字列に変換
+	        List<Map<String, Object>> testcodee = jdbcTemplate.queryForList("SELECT code FROM codecreate where testID = 1");
+	        
+	        String markdownText = testcodee.stream()
+	                .map(map -> map.get("code").toString()) // マップから"code"に対応する値を取得
+	                .collect(Collectors.joining("\n"));	
+	        
+	        byte[] utf8Bytes = markdownText.getBytes(StandardCharsets.UTF_8);
+	        markdownText = new String(utf8Bytes, StandardCharsets.UTF_8);
+
+	     
+	     // 以下、同じ
+	     HttpEntity<String> requestEntity = new HttpEntity<>(markdownText, headers);
+	     // ...
 
 	        // GitHub APIにリクエストを送信
 	        RestTemplate restTemplate = new RestTemplate();
@@ -73,6 +87,10 @@ public class RegisterController {
 	                requestEntity,
 	                String.class
 	        );
+	        
+	        System.out.println("Status code: " + responseEntity.getStatusCode());
+	        System.out.println("Headers: " + responseEntity.getHeaders());
+
 
 	        // レスポンスの本文（HTML形式のテキスト）を取得
 	        String responseBody = responseEntity.getBody();

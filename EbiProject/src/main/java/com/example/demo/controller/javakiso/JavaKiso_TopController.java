@@ -20,7 +20,6 @@ public class JavaKiso_TopController {
 	
 	@RequestMapping(path = "/javakiso/javakiso_top/{subjectID}", method = RequestMethod.GET)
 	public String subjectget(@PathVariable("subjectID") String subjectID,Model model,HttpSession session) {
-		System.out.println(subjectID);
 		int SubjectID = Integer.parseInt(subjectID);
 		session.setAttribute("subjectID",SubjectID);
 		java.util.List<Map<String, Object>> courcelist = jdbcTemplate.queryForList("SELECT * FROM cource WHERE subjectID =?",SubjectID);

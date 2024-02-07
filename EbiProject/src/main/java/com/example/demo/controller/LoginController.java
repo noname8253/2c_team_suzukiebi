@@ -27,7 +27,7 @@ public class LoginController {
 	@RequestMapping(path = "/login", method = RequestMethod.POST)
     public String top(int password,int number,Model model,HttpSession session) {
 		
-		List<Map<String, Object>> passlist = jdbcTemplate.queryForList("SELECT * FROM user WHERE s_number = ? and password = ?",number,password);		
+		List<Map<String, Object>> passlist = jdbcTemplate.queryForList("SELECT * FROM user WHERE snumber = ? and password = ?",number,password);		
 		if(passlist.size() != 0) {
 			
 		    Object NameValue = passlist.get(0).get("name");

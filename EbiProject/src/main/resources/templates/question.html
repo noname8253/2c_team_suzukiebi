@@ -5,6 +5,24 @@
 <link rel="stylesheet"type="text/css" href="css/header.css">
 <title>問題一覧</title>
 <div id="header"></div>
+<style>
+	body{
+		background-color: #FFDDFF;
+	}
+	.sub{
+		border: 15px outset #31A9EE;
+        box-sizing: border-box;
+        padding: 40px;
+        margin: 40px 480px; 
+        font-size: 20px;
+        
+    }    button{
+		width: 280px;
+		height:50px;
+		font-size: 28px;
+		
+	}
+	</style>
 </head>
 <body>
 	<script>
@@ -14,13 +32,20 @@
 		//sp menu
 </script>	
     <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>  
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
     <h1>問題一覧</h1>
-    <h2><a href="./javakiso/javakisoq_top">Java基礎</a></h2>
-
+     <div th:each="QuestionList:${QuestionList}"class="sub">
+			<h1><a th:text="${QuestionList.Subjectname}"></a></h1>
+			<a th:href="@{'/javakiso/javakisoq_top/' + ${QuestionList.SubjectID}}">
+			<br><button>授業</button></a>
+			<br>
+			<br>
+		</div>
+		<br>
 </body>
 </html>

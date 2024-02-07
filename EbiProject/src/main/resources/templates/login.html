@@ -6,6 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" th:href="@{/css/login.css}">
     <title>ログイン画面</title>
+    <style>
+		a{
+			font-size: 25px;
+		}
+	</style>
+    
 </head>
 <body>
 	<div style="text-align: center">
@@ -32,10 +38,16 @@
         </div>
 
         <input type="submit" name="login"class="login-botan">
-        <a class="login-link" href="#">Lost your password?</a>
+        <a class="login-link" href="newlogin">新規登録</a>
       </div>
       </form>
     </div>
   </div>
+  <script>
+		fetch("/../../header")
+			.then((response) => response.text())
+			.then((data) => document.querySelector("#header").innerHTML = data);
+		//sp menu
+	</script>
 </body>
 </html>

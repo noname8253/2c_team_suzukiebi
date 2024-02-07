@@ -2,12 +2,29 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link rel="stylesheet"type="text/css" href="css/header.css">
 <title>授業一覧</title>
 <div id="header"></div>
+	<style>
+		body{
+		background-color: #FFDDFF;
+	}
+	.sub{
+		border: 15px outset #31A9EE;
+        box-sizing: border-box;
+        padding: 40px;
+        margin: 40px 480px; 
+        font-size: 20px;
+        
+    }    button{
+		width: 280px;
+		height:50px;
+		font-size: 28px;
+		
+	}
+	</style>
 </head>
 <body>
-	
-	
 		<script>
       fetch("header")
         .then((response) => response.text())
@@ -15,15 +32,20 @@
 		//sp menu
 </script>	
     <br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<h1>授業選択</h1>
+    <div th:each="SubjectList:${SubjectList}" class="sub">
+        <h1><a th:text="${SubjectList.subjectname}"></a></h1>
+        <a th:href="@{'/javakiso/javakiso_top/' + ${SubjectList.subjectID}}">
+		<br><button>授業</button></a>
+        <br>
+        <br>
+    </div>
     <br>
-    <br>
-    <br>
-    <br>
-    <h1>授業一覧</h1>
-		    <tr th:each="SubjectList:${SubjectList}">
-			<a th:text="${SubjectList.subjectname}"></a>
-			<a th:href="@{'/javakiso/javakiso_top/' + ${SubjectList.subjectID}}"><button>授業</button></a>
-
-<br></tr>
 </body>
 </html>

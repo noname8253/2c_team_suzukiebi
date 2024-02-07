@@ -1,14 +1,30 @@
 package com.example.demo.controller.javakiso;
 
+import java.util.Map;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+import jakarta.servlet.http.HttpSession;
 
 @Controller
 public class JavaKisoQ_TopController {
 
-	@GetMapping("/javakiso/javakisoq_top")
-	public String subject() {
+	@Autowired
+	JdbcTemplate jdbcTemplate;
+	
+	@RequestMapping(path = "/javakiso/javakisoq_top/{subjectID}", method = RequestMethod.GET)
+	public String subjectget(@PathVariable("subjectID") String subjectID,Model model,HttpSession session) {
+		int SubjectID = Integer.parseInt(subjectID);
+		session.setAttribute("subjectID",SubjectID);
+		java.util.List<Map<String, Object>> questionlist = jdbcTemplate.queryForList("SELECT * FROM question WHERE subjectID =?",SubjectID);
+		model.addAttribute("QuestionList", questionlist);		
 		return "javakiso/javakisoq_top";
+//		return "javakiso/javakiso_top/{subjectID}";
 	}
-
 }

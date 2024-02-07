@@ -4,6 +4,14 @@
 <meta charset="UTF-8">
 <title>教師の状況</title>
 <div id="header"></div>
+<style>
+	h1{
+		font-size: 40px;
+	}
+	h2{
+		font-size: 35px;
+	}
+</style>
 </head>
 <form th:action="@{/teacher}" method="POST" enctype="multipart/form-data">
      <div class="teacher-form">
@@ -20,13 +28,17 @@
     <br>
     <br>
     <br>
+    <br>
+    <br>
+    <h1>教師状況一覧</h1>
+    <br>
+    <br>
 	
 	
 	<tr th:each="list:${selectResult}"> 
-		<a th:text="${list.name}+'先生 状況:'+${list.place}+'予定:'+${info}">
-			</a>
+		<h2><a th:text="${list.name}+'先生   状況  :'+${list.place}+'   予定  :'+${list.info}">
+			</a></h2>
 	</tr>	
-	<h2>上記のように名前,状況,予定欄を作りDBから取り出す</h2>
-	<h2>内容の変更は変更ページを教師アカウントのみ表示し、そこで行う</h2>
+	
 </body>
 </html>

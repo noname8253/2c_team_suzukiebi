@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		body{
+			text-align: center;
+		}
+	</style>
+<meta charset="UTF-8">
+<title>ユーザー情報登録</title>
+</head>
+<body>
+<h1>エラー：<a th:text="${e}"></a></h1>
+<h1>新規登録</h1>
+<form th:action="@{/newlogin}" method="POST">
+<h2>氏名</h2>
+<input type="text" name="name" width="30px">
+<h2>学籍番号</h2>
+<input type="text" name="number"width="30px">
+<h2>パスワード</h2>
+<input type="text" name="pass"width="30px">
+<h2>クラス</h2>
+<input type="text" name="syozoku"width="30px">
+<br>
+<br>
+<br>
+<input type="submit" value="ユーザ登録">
+</form>
+</body>
+</html>

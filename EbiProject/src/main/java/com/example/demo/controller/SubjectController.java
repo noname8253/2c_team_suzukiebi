@@ -18,6 +18,7 @@ public class SubjectController {
 	JdbcTemplate jdbcTemplate;
 
 	
+	
 	@RequestMapping(path = "/subject", method = RequestMethod.GET)
 	public String subject(Model model,HttpSession httpsession) {
 		

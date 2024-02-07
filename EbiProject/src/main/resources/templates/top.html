@@ -6,12 +6,28 @@
 <title>トップ画面</title>
 <div id="header"></div>
 <style>
+	body{
+		background-color: #FFDDFF;
+	}
 	img{
 		width: 100%;
-		height: 500px;	}
+		height: 500px;	
+		}
+	
+	.text{
+		font-size: 20px;
+	}
+	
+		.sub{
+		border: 10px outset #31A9EE;
+        box-sizing: border-box;
+        padding: 40px;
+        margin: 80px 480px; 
+        font-size: 20px;
+        }
 </style>
 </head>
-<body>
+
 	<script>
       fetch("http://localhost:8080/header")
         .then((response) => response.text())
@@ -20,16 +36,29 @@
 </script>	
     <br>
     <br>
-    <p th:text="${session.Name} + 'さんよこそ'"></p>
+    <br>
+    <br>
     <br>  
     <img src="/images/KRC_study.jfif">
-	<h1><a href="subject">授業一覧</a></h1>
+    <div class="sub">
+	<h1><a href="subject"><font color="blue">授業一覧</font></a></h1>
 	<h2>各授業の復習ができます</h2>
-	<h1><a href="question">問題一覧</a></h1>
+	</div>
+	<div class="sub">
+	<h1><a href="question"><font color="blue">問題一覧</font></a></h1>
 	<h2>練習問題に挑戦できます</h2>
-	<h1><a href="teacher">教師状況</a></h1>
+	</div>	
+	<div class="sub">
+	<h1><a href="teacher"><font color="blue">教師状況</font></a></h1>
 	<h2>各教師の居場所や都合が載ってます</h2>
-	<h1><a href="register">授業記事登録</a></h1>
+	</div>
+	<div class="sub">
+	<h1><a href="register"><font color="blue">授業記事登録</font></a></h1>
 	<h2>!!教員専用!!授業記事の登録ができます</h2>
+	</div>
+	<div class="sub">
+	<h1><a href="qregister"><font color="blue">問題記事登録</font></a></h1>
+	<h2>!!教員専用!!問題記事の登録ができます</h2>
+	</div>
 </body>
 </html>

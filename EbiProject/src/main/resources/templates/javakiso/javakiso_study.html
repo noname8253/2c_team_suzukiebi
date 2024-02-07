@@ -5,6 +5,22 @@
     <meta charset="UTF-8">
     <title>Java基礎_授業</title>
     <link rel="stylesheet" type="text/css" href="../../../css/header.css">
+    <style>
+		body{
+		background-color: #FFDDFF;
+	}
+	.sub{
+		border: 5px outset #000000;
+        box-sizing: border-box;
+        padding: 40px;
+        margin: 40px 480px; 
+        font-size: 25px;
+        
+    }   
+    h2{
+		font-size: 28px;
+	}
+	</style>
 </head>
 
 <body>
@@ -15,13 +31,14 @@
     <br>
     <br>
     <br>
+    <br>
+    <br>
     <h2 th:text="${courceList}"></h2> 
-    <h2>-----------------------------</h2>
-    <div th:utext="${articleList}"></div>
+    <br>
+    <div th:utext="${articleList}" class ="sub"></div>
     <br>
     <br>
     <br>
-    <h2>-----------------------------</h2>
     <script>
         fetch("../../../header")
             .then((response) => response.text())

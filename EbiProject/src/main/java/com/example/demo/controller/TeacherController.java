@@ -20,6 +20,6 @@ public class TeacherController {
         List<Map<String, Object>> resultList = jdbcTemplate.queryForList("SELECT * FROM teacher");
             model.addAttribute("selectResult", resultList);
             
-            return "/teacher";
+            return "teacher";
         }
 }

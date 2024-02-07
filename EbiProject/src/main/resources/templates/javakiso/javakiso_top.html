@@ -7,10 +7,22 @@
 	<title>Java基礎_トップ</title>
 	<div id="header"></div>
 	<style>
-		a {
-			font-size: 25px;
-
-		}
+		body{
+		background-color: #FFDDFF;
+	}
+	.sub{
+		border: 15px outset #31A9EE;
+        box-sizing: border-box;
+        padding: 40px;
+        margin: 40px 480px; 
+        font-size: 20px;
+        
+    }    button{
+		width: 280px;
+		height:50px;
+		font-size: 28px;
+		
+	}
 	</style>
 </head>
 
@@ -26,15 +38,18 @@
 	<br>
 	<br>
 	<br>
-	<h1>授業回数選択</h1>
+	<br>
+	<br>
+	<h1>回数選択</h1>
 
-	
-	<tr th:each="CourceList:${CourceList}">
-		<a th:text="'第'+${CourceList.courceID}+'回目：'+ ${CourceList.title}"></a>
-		<a th:href="@{'/javakiso/javakiso_study/' + ${session.subjectID} + '/' +${CourceList.courceID}}"><button>授業</button></a>
+	<div th:each="CourceList:${CourceList}" class="sub">
+		<h1><a th:text="'第'+${CourceList.courceID}+'回目：'+ ${CourceList.title}"></a></h1>
+		<a th:href="@{'/javakiso/javakiso_study/' + ${session.subjectID} + '/' +${CourceList.courceID}}"></font>
+		<button>授業</button></a>
 		<br>
+		<br>
+	</div>
 		</form>
-	</tr>
 </body>
 
 </html>
